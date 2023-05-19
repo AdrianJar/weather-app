@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { selectWeatherDetails } from '../../weatherAppSlice';
-import { City, Icon, Temp, WeatherWrapper, Wrapper } from './styled';
+import { City, Icon, Temp, WeatherWrapper, Wrapper, Details } from './styled';
 
 const Weather = () => {
 
@@ -12,10 +12,10 @@ const Weather = () => {
         <Wrapper>
             <WeatherWrapper>
                 <Icon>Sun</Icon>
-                <div>
-                    <Temp>{data.main.temp.toFixed(1)}°C</Temp>
+                <Details>
                     <City>{data.name}</City>
-                </div>
+                    <Temp>{data.main.temp.toFixed(1)}°C</Temp>
+                </Details>
             </WeatherWrapper>
 
 
