@@ -2,23 +2,41 @@ import React, { useEffect } from 'react'
 import { Wrapper } from './styled'
 import Footer from './Footer'
 import Weather from './Weather'
-import { useDispatch } from 'react-redux'
-import { fetchWeather } from '../weatherAppSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchWeather, selectWeatherStatus } from '../weatherAppSlice'
+import Input from './Input'
 
 const WeatherApp = () => {
-    
+
     const dispatch = useDispatch();
 
-    useEffect(()=> {
+    useEffect(() => {
         dispatch(fetchWeather());
     }, [dispatch]);
-    
-    return (
-        <Wrapper>
-            <Weather />
-            <Footer />
-        </Wrapper>
-    )
+
+    const status = useSelector(selectWeatherStatus);
+
+    switch (status) {
+        case "initial":
+            return null;
+
+        case "loading":
+            return null;
+
+        case "error":
+            return null;
+
+        case "success":
+            return (
+                <Wrapper>
+                    <Input />
+                    <Weather />
+                    <Footer />
+                </Wrapper>
+            )
+        default:
+            throw new Error(`incorrect status: ${status}`);
+    }
 }
 
 export default WeatherApp
