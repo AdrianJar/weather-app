@@ -3,11 +3,10 @@ import { fetchWeather, fetchWeatherError, fetchWeatherSuccess } from "./weatherA
 import axios from "axios";
 
 export const getWeather = () =>
-    axios.get(`${"http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=d7edc521431838da1601cbfc37f26eab&units=metric"}`)
+    axios.get(`http://api.openweathermap.org/data/2.5/weather?q=London&APPID=d7edc521431838da1601cbfc37f26eab&units=metric`)
         .then(response => response.data);
 
 const loadingDelay = 2000;
-
 function* fetchWeatherHandler() {
     try {
         yield delay(loadingDelay);
