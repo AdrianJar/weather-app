@@ -12,6 +12,7 @@ html {
 }
 
 body {
+    margin: 10px 20px;
     font-family: 'Josefin Sans', sans-serif;
     font-style: normal;
     background: ${({theme})=> theme.color.background};
