@@ -28,7 +28,7 @@ export const {
     fetchWeatherError
 } = weatherSlice.actions;
 
-const selectWeatherState = state => state.weather
+const selectWeatherState = state => state.weather;
 
 export const selectWeatherDetails = state => selectWeatherState(state).weatherDetails
 export const selectWeatherStatus = state => selectWeatherState(state).status
