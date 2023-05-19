@@ -4,6 +4,7 @@ const colors = {
     pattensBlue: "#D6E4FF",
     black: "#000000",
     desertStorm: "#F1F0EF",
+    alto: "#D9D9D9",
     lightGradient: "linear-gradient(90deg, rgba(68,123,235,1) 0%, rgba(16,124,226,1) 23%, rgba(0,68,204,1) 79%, rgba(0,67,224,1) 100%);",
     darkGradient: "linear-gradient(90deg, rgba(44,54,80,1) 0%, rgba(28,45,61,1) 23%, rgba(26,35,56,1) 79%, rgba(5,16,45,1) 100%)",
 }
@@ -27,8 +28,8 @@ export const lightTheme = {
         weather: {
             background: colors.lightGradient,
             text: colors.white,
-        }
-        
+        },
+        wrapperBackground: colors.alto,
     }, 
 }
 
